@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_community"
+        android:title="@string/menu_community"
+        android:icon="@drawable/ic_home_black"
+        />
+
+    <item
+        android:id="@+id/menu_compassion"
+        android:title="@string/menu_compassion"
+        android:icon="@drawable/ic_search_black"
+        />
+
+    <item
+        android:id="@+id/menu_awareness"
+        android:title="@string/menu_awareness"
+        android:icon="@drawable/ic_notifications_black" />
+    <item
+        android:id="@+id/menu_action"
+        android:title="Action"
+        android:icon="@drawable/newmessage"/>
+</menu>
