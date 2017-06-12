@@ -1,5 +1,6 @@
 package com.segunfamisa.sample.bottomnav;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
@@ -9,6 +10,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         mBottomNav = (BottomNavigationView) findViewById(R.id.navigation);
         mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -69,12 +74,10 @@ public class MainActivity extends AppCompatActivity {
                 frag = fragment_compassion.newInstance();
                 break;
             case R.id.menu_awareness:
-                frag = MenuFragment.newInstance(getString(R.string.text_awareness),
-                        getColorFromRes(R.color.color_search));
+                frag = awareness.newInstance();
                 break;
             case R.id.menu_action:
-                frag = MenuFragment.newInstance(getString(R.string.text_action),
-                        getColorFromRes(R.color.color_search));
+                frag = action.newInstance();
                 break;
         }
 
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         mSelectedItem = item.getItemId();
 
         // uncheck the other items.
-        for (int i = 0; i< mBottomNav.getMenu().size(); i++) {
+        for (int i = 0; i < mBottomNav.getMenu().size(); i++) {
             MenuItem menuItem = mBottomNav.getMenu().getItem(i);
             menuItem.setChecked(menuItem.getItemId() == item.getItemId());
         }
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         if (frag != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.add(R.id.container, frag, frag.getTag());
-           ft.commit();
+            ft.commit();
         }
     }
 
@@ -105,5 +108,33 @@ public class MainActivity extends AppCompatActivity {
 
     private int getColorFromRes(@ColorRes int resId) {
         return ContextCompat.getColor(this, resId);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent settings=new Intent(getApplicationContext(),SettingsActivity.class);
+            startActivity(settings);
+        }
+        if (id == R.id.action_profile) {
+            Intent prof=new Intent(getApplicationContext(),Profile.class);
+            startActivity(prof);
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

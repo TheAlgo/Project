@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.segunfamisa.sample.bottomnav.Profile"
+    tools:showIn="@layout/activity_profile"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/allyh2"
+            android:id="@+id/imageView8"
+            android:adjustViewBounds="true"
+            android:layout_width="150dp"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="true"
+            android:scaleType="centerCrop"
+            android:textAlignment="center"
+            android:translationZ="@dimen/fab_margin"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:text="Detail1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:id="@+id/Prof_Detail1" />
+
+    <TextView
+        android:text="Detail2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:id="@+id/Prof_Detail2" />
+
+    <TextView
+        android:text="Detail3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:id="@+id/Prof_Detail3" />
+
+    <TextView
+        android:text="Detail4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:id="@+id/Prof_Detail4" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="Buy Narcotant"
+            android:layout_height="60dp"
+            android:id="@+id/button5"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:elevation="24dp"
+            android:visibility="visible"
+            android:background="@color/primary_light"
+            android:layout_width="100dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:text="Events"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Event"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
+        android:id="@+id/hvr"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/li">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/background"
+                android:id="@+id/imageView9"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/evnts"
+                android:id="@+id/imageView12" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/allyh2"
+                android:id="@+id/imageView11" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ally1"
+                android:id="@+id/imageView10" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>

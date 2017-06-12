@@ -62,7 +62,7 @@
         android:elevation="24dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:ellipsize="none"
-        android:background="@color/primary_dark"
+        android:background="@color/colorPrimaryDark"
         android:layout_below="@+id/editText2"
         android:layout_centerHorizontal="true"
         android:enabled="true"
